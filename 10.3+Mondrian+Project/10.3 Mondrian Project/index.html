@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mondrian Project</title>
-  <style>
-    /* 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mondrian Project</title>
+    <style>
+      /* 
     Write your CSS here 
     Gap Colour: #000
     White: #F0F1EC
@@ -19,11 +18,99 @@
     HINT: Remember you can't change the properties of grid lines.
     But grid lines are transparent!
     */
-  </style>
-</head>
+      .container {
+        display: grid;
+        gap: 9px;
+        height: 748px;
+        width: 748px;
+        grid-template-columns: 320px 419px;
+        grid-template-rows: 414px 325px;
+        background-color: black;
+      }
 
-<body>
-  <!-- Write your HTML here -->
-</body>
+      .outer {
+        background-color: rgb(245, 245, 245);
+      }
 
+      .top-left {
+        background-color: #e72f24;
+      }
+
+      .bottom-left {
+        display: grid;
+        gap: 9px;
+        background-color: black;
+        grid-template-rows: 1fr 20px;
+      }
+      .inner {
+        background-color: rgb(245, 245, 245);
+      }
+      .bottom-right {
+        display: grid;
+        grid-template-columns: 1fr 50px;
+        gap: 9px;
+        background-color: black;
+      }
+      .inner-rightleft {
+        display: grid;
+        background-color: black;
+        grid-template-rows: 1fr 20px;
+        gap: 9px;
+      }
+
+      .smaller-bot {
+        display: grid;
+        grid-template-columns: 198px 153px;
+        gap: 9px;
+      }
+      .smaller-top {
+        background-color: rgb(245, 245, 245);
+      }
+      .inner-rightright {
+        display: grid;
+        grid-template-rows: 130px 1fr;
+        background-color: black;
+        gap: 10px;
+      }
+
+      .yellow {
+        background-color: #f9d01e;
+      }
+
+      .darkblue {
+        background-color: #232629;
+      }
+      .cleanup {
+        background-color: rgb(245, 245, 245);
+      }
+      .rectangle {
+        background-color: #004592;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Write your HTML here -->
+    <div class="container">
+      <div class="outer top-left"></div>
+      <div class="outer top-right"></div>
+      <div class="outer bottom-left">
+        <div class="inner innerleft-top"></div>
+        <div class="inner innerleft-bottom"></div>
+      </div>
+      <div class="outer bottom-right">
+        <div class="inner inner-rightleft">
+          <div class="smaller-top"></div>
+          <div class="smaller-bot">
+            <div class="yellow"></div>
+            <div class="darkblue"></div>
+          </div>
+        </div>
+        <div class="inner inner-rightright">
+          <div class="rectangle"></div>
+          <div class="cleanup"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
