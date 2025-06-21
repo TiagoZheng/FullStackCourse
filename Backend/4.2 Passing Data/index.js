@@ -6,9 +6,16 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {});
+app.get("/", (req, res) => {
+  res.render("index.ejs");
+});
 
-app.post("/submit", (req, res) => {});
+app.post("/submit", (req, res) => {
+  const fName = req.body["fName"];
+  const lName = req.body["lName"];
+  const sumName = fName.length + lName.length;
+  res.render("index.ejs", { numberOfLetters: sumName });
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
